@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto Italiano | Італійський ресторан</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #D32F2F; /* Італійський червоний */
+            --accent-color: #FBC02D; /* Золотистий */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --bg-light: #FFFBF0; /* Кремовий фон */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 10px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Filter Buttons */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .item-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Спрощене меню для мобільних */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Gusto Italiano 🇮🇹</div>
+            <div class="nav-links">
+                <a href="#home">Головна</a>
+                <a href="#menu">Меню</a>
+                <a href="#contact">Контакти</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Справжній смак Італії</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Найкраща паста та піца у вашому місті</p>
+            <a href="#menu" class="btn">Переглянути Меню</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Наше Меню</h2>
+
+        <div class="menu-tabs">
+            <button class="tab-btn active" onclick="filterMenu('all')">Все</button>
+            <button class="tab-btn" onclick="filterMenu('pizza')">Піца</button>
+            <button class="tab-btn" onclick="filterMenu('pasta')">Паста</button>
+            <button class="tab-btn" onclick="filterMenu('dessert')">Десерти</button>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item" data-category="pizza">
+                <img src="https://images.unsplash.com/photo-1574071318500-8c131c80fb95?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Піца Маргарита" class="item-img">
+                <div class="item-content">
+                    <div class="item-header">
+                        <h3 class="item-title">Піца Маргарита</h3>
+                        <span class="item-price">220 грн</span>
+                    </div>
+                    <p class="item-desc">Класичний томатний соус, моцарела ді буфала, свіжий базилік.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="pizza">
+                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Пепероні" class="item-img">
+                <div class="item-content">
+                    <div class="item-header">
+                        <h3 class="item-title">Дьявола (Пепероні)</h3>
+                        <span class="item-price">260 грн</span>
+                    </div>
+                    <p class="item-desc">Гостра салямі, перець чилі, моцарела, томатний соус.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="pasta">
+                <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Карбонара" class="item-img">
+                <div class="item-content">
+                    <div class="item-header">
+                      <h3 class="item-title">Спагеті Карбонара</h3>
+                        <span class="item-price">240 грн</span>
+                    </div>
+                    <p class="item-desc">Справжня римська карбонара без вершків: гуанчіале, яйця, пекоріно, перець.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="pasta">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Паста з морепродуктами" class="item-img">
+                <div class="item-content">
+                    <div class="item-header">
+                        <h3 class="item-title">Тальятеле з морепродуктами</h3>
+                        <span class="item-price">320 грн</span>
+                    </div>
+                    <p class="item-desc">Креветки, мідії, кальмари у ніжному вершковому соусі.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="dessert">
+                <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Тірамісу" class="item-img">
+                <div class="item-content">
+                    <div class="item-header">
+                        <h3 class="item-title">Тірамісу</h3>
+                        <span class="item-price">150 грн</span>
+                    </div>
+                    <p class="item-desc">Класичний італійський десерт з савоярді, еспресо та маскарпоне.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="dessert">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Панна Котта" class="item-img">
+                <div class="item-content">
+                    <div class="item-header">
+                        <h3 class="item-title">Панна Котта</h3>
+                        <span class="item-price">130 грн</span>
+                    </div>
+                    <p class="item-desc">Ніжний вершковий десерт з ягідним соусом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Gusto Italiano. Всі права захищено.</p>
+        <p>Вул. Хрещатик, 1, Київ | Тел: +380 99 123 45 67</p>
+    </footer>
+
+    <script>
+        function filterMenu(category) {
+            // 1. Отримуємо всі страви та кнопки
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            // 2. Змінюємо активну кнопку (стиль)
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                // Якщо текст кнопки збігається з категорією (приблизно), робимо активною
+                // Для простоти тут ми покладаємось на те, що користувач клікнув конкретну кнопку
+            });
+            
+            // Знаходимо кнопку, на яку клікнули, і додаємо їй клас active
+            // (Тут простий варіант через event.target, але в inline onclick простіше так:)
+            event.currentTarget.classList.add('active');
+
+            // 3. Фільтруємо страви
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'block'; // Показуємо
+                } else {
+                    item.style.display = 'none';  // Ховаємо
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+        .menu-item {
